@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-source <(curl -fsSL https://raw.githubusercontent.com/community-scripts/ProxmoxVE/main/misc/build.func)
+source <(curl -fsSL https://raw.githubusercontent.com/Xerovoxx98/ProxmoxVE/refs/heads/bazarr-uv-fix/misc/build.func)
 # Copyright (c) 2021-2025 tteck
 # Author: tteck (tteckster)
 # License: MIT | https://github.com/community-scripts/ProxmoxVE/raw/main/LICENSE
@@ -41,7 +41,7 @@ function update_script() {
     msg_info "Setup Bazarr"
     mkdir -p /var/lib/bazarr/
     chmod 775 /opt/bazarr /var/lib/bazarr/
-    $STD uv pip install -r /opt/bazarr/requirements.txt --system
+    $STD uv run --with pip python -m pip install -r /opt/bazarr/requirements.txt
     msg_ok "Setup Bazarr"
 
     msg_ok "Update Successful"
