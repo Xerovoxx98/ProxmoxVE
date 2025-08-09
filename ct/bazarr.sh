@@ -42,7 +42,7 @@ function update_script() {
     mkdir -p /var/lib/bazarr/
     chmod 775 /opt/bazarr /var/lib/bazarr/
     cat /opt/bazarr/requirements.txt
-    sed -i.bak '/--only-binary=Pillow/d' /opt/bazarr/requirements.txt
+    sed -i.bak 's/--only-binary=Pillow//g' /opt/bazarr/requirements.txt
     cat /opt/bazarr/requirements.txt
     $STD uv pip install -r /opt/bazarr/requirements.txt --system --only-binary=Pillow
     msg_ok "Setup Bazarr"
