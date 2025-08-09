@@ -1,4 +1,4 @@
-default# Copyright (c) 2021-2025 tteck
+# default# Copyright (c) 2021-2025 tteck
 # Author: tteck (tteckster)
 # Co-Author: MickLesk
 # Co-Author: michelroegl-brunner
@@ -1350,7 +1350,7 @@ EOF'
   fi
   msg_ok "Customized LXC Container"
 
-  lxc-attach -n "$CTID" -- bash -c "$(curl -fsSL https://raw.githubusercontent.com/Xerovoxx98/ProxmoxVE/refs/heads/bazarr-uv-fix/install/${var_install}.sh)"
+  lxc-attach -n "$CTID" -- bash -c "$(curl -fsSL https://raw.githubusercontent.com/Xerovoxx98/ProxmoxVE/refs/heads/bazarr-uv-fix/install/"${var_install}".sh)"
 }
 
 # This function sets the description of the container.
