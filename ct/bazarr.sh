@@ -41,7 +41,7 @@ function update_script() {
     msg_info "Setup Bazarr"
     mkdir -p /var/lib/bazarr/
     chmod 775 /opt/bazarr /var/lib/bazarr/
-    $STD uv run --with pip python -m pip install -r /opt/bazarr/requirements.txt
+    $STD uv pip install -r /opt/bazarr/requirements.txt --system --only-binary=Pillow
     msg_ok "Setup Bazarr"
 
     msg_ok "Update Successful"
