@@ -25,9 +25,8 @@ fetch_and_deploy_gh_release "bazarr" "morpheus65535/bazarr" "prebuild" "latest" 
 msg_info "Installing Bazarr"
 mkdir -p /var/lib/bazarr/
 chmod 775 /opt/bazarr /var/lib/bazarr/
-cat /opt/bazarr/requirements.txt
+echo "INSTALLING WITHOUT PILLOW LINE"
 sed -i.bak 's/--only-binary=Pillow//g' /opt/bazarr/requirements.txt
-cat /opt/bazarr/requirements.txt
 $STD uv pip install -r /opt/bazarr/requirements.txt --system
 msg_ok "Installed Bazarr"
 
